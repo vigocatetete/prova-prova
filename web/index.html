@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infraestructura Web de Alta Disponibilidad</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            background-color: #1e293b;
+            width: 100%;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #38bdf8;
+            margin: 0;
+        }
+        main {
+            max-width: 800px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .content-card {
+            background-color: #1e293b;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        video {
+            max-width: 100%;
+            border-radius: 8px;
+            outline: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .badge {
+            background-color: #38bdf8;
+            color: #0f172a;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Infraestructura Web con Proxy Inverso</h1>
+        <p>Práctica de Alta Disponibilidad y Balanceo de Carga</p>
+    </header>
+    
+    <main>
+        <div class="content-card">
+            <h2>Arquitectura Desplegada</h2>
+            <p>Esta página está siendo servida por uno de los dos servidores backend Apache (httpd) ocultos en una red privada. Todo el tráfico pasa primero a través de un proxy inverso Nginx que distribuye las peticiones para garantizar la disponibilidad.</p>
+            <div class="tech-stack">
+                <span class="badge">Docker</span>
+                <span class="badge">Nginx</span>
+                <span class="badge">Apache HTTPD</span>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2>Esquema Visual</h2>
+            <img src="image.png" alt="Esquema de Servidores y Proxy Inverso">
+            <p>Representación de la red aislada y el balanceador de carga.</p>
+        </div>
+
+        <div class="content-card">
+            <h2>Elemento Multimedia</h2>
+            <p>Vídeo de prueba servido desde el volumen compartido.</p>
+            <video controls autoplay loop muted>
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta el formato de vídeo.
+            </video>
+        </div>
+    </main>
+</body>
+</html>
