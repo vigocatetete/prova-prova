@@ -1,0 +1,33 @@
+services:
+  proxy:
+    image: nginx:alpine
+    container_name: web-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./proxy/nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - web_network
+    depends_on:
+      - backend1
+      - backend2
+
+  backend1:
+    image: httpd:alpine
+    container_name: web-backend1
+    volumes:
+      - ./web:/usr/local/apache2/htdocs/:ro
+    networks:
+      - web_network
+
+  backend2:
+    image: httpd:alpine
+    container_name: web-backend2
+    volumes:
+      - ./web:/usr/local/apache2/htdocs/:ro
+    networks:
+      - web_network
+
+networks:
+  web_network:
+    driver: bridge
