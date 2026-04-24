@@ -62,8 +62,8 @@ curl -I http://localhost
 
 Podemos observar en la respuesta final cómo la IP interna cambia, demostrando que el balanceo Round-Robin está activo:
 
-* **Petición 1:** En las cabeceras obtenemos `X-Backend-Server: 172.x.x.2:80` (La petición la resolvió el Backend 1).
-* **Petición 2:** Al repetirlo obtenemos `X-Backend-Server: 172.x.x.3:80` (La petición la resolvió el Backend 2).
+* **Petición 1:** En las cabeceras obtenemos `X-Backend-Server: 172.20.0.2:80` (La petición la resolvió el Backend 1).
+* **Petición 2:** Al repetirlo obtenemos `X-Backend-Server: 172.20.0.3:80` (La petición la resolvió el Backend 2).
 
 Con esto queda demostrada la correcta implementación de la alta disponibilidad y el aislamiento requeridos.
 
